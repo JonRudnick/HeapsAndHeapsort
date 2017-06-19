@@ -2,8 +2,9 @@
 /**
  * HeapAndHeapsort
  * 
- * Author: M. Q. Rieck
- * Date: June 2013
+ * Author: Jonathan Rudnick
+ * Date: March 1, 2016
+ * Assignment: HW #5 Part 3
  * 
  */
 
@@ -14,7 +15,7 @@
 // An object from this class is a heap containing generic
 // data, along with a priority number for each item. Once
 // a heap has been built, it can also be used to Heapsort.
-public class HeapAndHeapsort<Data> {
+public class HeapsAndHeapsort<Data> {
 
    // EXECUTION BEGINS HERE 
    
@@ -152,12 +153,15 @@ public class HeapAndHeapsort<Data> {
         heap.displayLevels();
         System.out.print("The heap as a list: ");
         heap.display();
+        heap.fixHeap();
+        heap.display();
         //heap.heapsort();
         //System.out.print("After Heapsorting: ");
         //heap.display();
     }
-    pulic void fixHeapAtNode(int index)
+    public void fixHeapAtNode(int index)
     {
+        int indexL, indexR, indexM;
     	if(leftChild(index) <= heapsize)
     		fixHeapAtNode(leftChild(index));
     	else if(rightChild(index) <= heapsize)
